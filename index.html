@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyst Performance Evaluation | Xactly</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: #f4f5f7;
+            min-height: 100vh;
+            padding: 24px;
+            color: #172b4d;
+            margin: 0;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50vh;
+            background: #F27C21;
+            z-index: -1;
+        }
+
+        .company-logo-img {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 120px;
+            height: auto;
+            z-index: 1000;
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+        }
+
+        .container {
+            max-width: 1008px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 3px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: #f27c21;
+            color: #ffffff;
+            padding: 48px 40px;
+            position: relative;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .company-logo {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+            font-weight: 500;
+            line-height: 1.25;
+        }
+
+        .header p {
+            font-size: 16px;
+            opacity: 0.95;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .form-container {
+            padding: 40px;
+            background: #ffffff;
+        }
+
+        .google-form-frame {
+            width: 100%;
+            height: 800px;
+            border: none;
+            border-radius: 3px;
+            box-shadow: 0 1px 1px rgba(9, 30, 66, 0.25);
+        }
+
+        .instructions {
+            background: #fafbfc;
+            padding: 24px;
+            border-radius: 3px;
+            margin-bottom: 24px;
+            border-left: 4px solid #f27c21;
+        }
+
+        .instructions h3 {
+            color: #172b4d;
+            margin-bottom: 12px;
+            font-size: 18px;
+        }
+
+        .instructions ul {
+            margin-left: 20px;
+            color: #6b778c;
+        }
+
+        .instructions li {
+            margin-bottom: 8px;
+        }
+
+        .form-footer {
+            background: #fafbfc;
+            padding: 16px 24px;
+            border-radius: 3px;
+            margin-top: 24px;
+            border-left: 4px solid #0065ff;
+            text-align: center;
+        }
+
+        .scoring-legend {
+            background: #fafbfc;
+            padding: 32px 40px;
+            border-bottom: 1px solid #dfe1e6;
+        }
+
+        .scoring-legend h3 {
+            color: #172b4d;
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .legend-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .form-footer p {
+            color: #6b778c;
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .excellent {
+            border-left-color: #36b37e;
+        }
+
+        .good {
+            border-left-color: #0065ff;
+        }
+
+        .average {
+            border-left-color: #6554c0;
+        }
+
+        .needs-improvement {
+            border-left-color: #f27c21;
+        }
+
+        @media (max-width: 768px) {
+            .google-form-frame {
+                height: 600px;
+            }
+
+            .legend-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Company Logo -->
+    <img src="logo.png" alt="Xactly Logo" class="company-logo-img">
+
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="company-logo">XACTLY</div>
+                <h1>Audit Performance Evaluation</h1>
+
+            </div>
+        </div>
+
+        <div class="form-container">
+            <div class="scoring-legend">
+                <h3>Scoring Legend</h3>
+                <div class="legend-grid">
+                    <div class="legend-item excellent">
+                        <strong>90-100 Points</strong><br>Excellent
+                    </div>
+                    <div class="legend-item good">
+                        <strong>80-89 Points</strong><br>Good
+                    </div>
+                    <div class="legend-item average">
+                        <strong>60-79 Points</strong><br>Average
+                    </div>
+                    <div class="legend-item needs-improvement">
+                        <strong>Below 60 Points</strong><br>Needs Improvement
+                    </div>
+                </div>
+            </div>
+
+            <!-- Replace this URL with your actual Google Form embed URL -->
+            <iframe
+                src="https://docs.google.com/forms/d/e/1FAIpQLSe_pbYmu5oy3p3OzCczxXZxmYxu2AaNYBRfDGzD-7fLgdS0gw/viewform?embedded=true"
+                width="100%" height="2200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+            <div class="form-footer">
+                <p><strong>Note:</strong> After submitting, you can download all responses as CSV from the connected
+                    Google Sheet.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Optional: Add some interactivity
+        document.addEventListener('DOMContentLoaded', function () {
+            // You can add any additional functionality here
+            console.log('Google Form Integration loaded successfully');
+        });
+    </script>
+</body>
+
+</html>
